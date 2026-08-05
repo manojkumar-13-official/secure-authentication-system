@@ -2,6 +2,7 @@ package com.example.MainAuthenticationProject.Controller;
 
 import com.example.MainAuthenticationProject.Model.UserEntity;
 import com.example.MainAuthenticationProject.Service.UserService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,9 +53,12 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @PutMapping("/updateUser/{userId}")
+    @PutMapping("/deleteUser/{userId}")
     public ResponseEntity<String> deleteUser(@PathVariable Long userId){
         Boolean message = userService.deleteUser(userId);
-
+        if(message){
+            return ResponseEntity.ok("User Deleted Successfully");
+        }
+        return ResponseEntity.notFound().build();
     }
 }
