@@ -10,4 +10,9 @@ public class HomeController {
     public String getGreetings(){
         return "Welcome to my project";
     }
+
+    @GetMapping("/dashboard")
+    public String getSuccessfulMessage(){
+        return "Login Successful Welcome to our Application";
+    }
 }
