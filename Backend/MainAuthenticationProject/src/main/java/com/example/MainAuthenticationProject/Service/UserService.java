@@ -39,7 +39,6 @@ public class UserService {
     }
 
     //Delete User By ID
-
     public Boolean deleteUser(Long userId){
         UserEntity fetchedUser = getUserById(userId);
         if(fetchedUser!=null){
