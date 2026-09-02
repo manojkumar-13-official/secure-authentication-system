@@ -1,10 +1,9 @@
-import React from 'react'
-import HomePage from './pages/HomePage'
+import ProjectRouter from './Router/ProjectRouter'
 
 const App = () => {
   return (
     <div>
-      <HomePage/>
+      <ProjectRouter/>
     </div>
   )
 }
